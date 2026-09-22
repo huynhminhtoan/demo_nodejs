@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  qr-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qr-builder
+    volumes:
+      # Mount trực tiếp một thư mục trên máy host để chứa file đã build
+      # Thay /var/www/qr bằng đường dẫn thư mục bạn muốn lưu trên host
+      - /var/www/qr:/output
